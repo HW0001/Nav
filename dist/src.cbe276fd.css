@@ -10,18 +10,22 @@ body{
 header,main{
     background-color: #fff;
 }
-header{ 
+a{
+    cursor: pointer;
+    color: inherit;
+}
+header>form{ 
     display: flex;
     justify-content: center;
     padding: 20px;
 }
-header>input{
+header>form>input{
     width: 100%;
     height: 40px;
     border: 1px solid #dddddd;
     border-radius: 4px;
 }
-header>button{
+header>form>button{
     padding: 10px 20px;
     white-space: nowrap;
     background-color: aquamarine;
@@ -39,7 +43,7 @@ main li{
     justify-content: center;
     align-items: center; 
 }
-main li>div{
+main li>a>div{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,8 +53,8 @@ main li>div{
     width: 140px;
     height: 140px;
 }
-main li>div>div{ 
+main li>a>div>div{ 
     font-size: 64px; 
 }
 
-/*# sourceMappingURL=src.b409b0f4.css.map */
+/*# sourceMappingURL=src.cbe276fd.css.map */
