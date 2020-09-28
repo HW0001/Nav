@@ -16,28 +16,33 @@
 </head>
 <body>
      <header>
-         <input type="text">
-         <button>搜索</button>
+         <form action="http://www.baidu.com/s">
+            <input type="text" name="wd">
+            <button type="submit">搜索</button>
+         </form> 
      </header>
      <main>
          <ol>
-             <li><div>
+             <li>
+                 <a href="https://www.acfun.cn/"><div>
                  <div>A</div>
                  <span>Afunc</span>
-             </div></li>
-             <li><div>
+             </div></a></li>
+             <li><a href="https://www.bilibili.com/"><div>
                 <span>BiliBili</span>
-            </div></li>
-            <li><div>
+            </div></a></li>
+            <li><a><div id=addsite>
                 <div>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-add"></use>
                     </svg>
                 </div>
                 <span>添加网站</span>
-            </div></li>
+            </div></a></li>
          </ol>
      </main>
      <script src="//at.alicdn.com/t/font_2107843_uehhise5yo8.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+     <script src="./main.js"></script>
 </body>
 </html>
