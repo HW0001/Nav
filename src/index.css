@@ -13,6 +13,7 @@ header,main{
 a{
     cursor: pointer;
     color: inherit;
+    text-decoration: none;
 }
 header>form{ 
     display: flex;

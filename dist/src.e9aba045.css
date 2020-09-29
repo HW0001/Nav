@@ -13,6 +13,7 @@ header,main{
 a{
     cursor: pointer;
     color: inherit;
+    text-decoration: none;
 }
 header>form{ 
     display: flex;
@@ -57,4 +58,4 @@ main li>a>div>div{
     font-size: 64px; 
 }
 
-/*# sourceMappingURL=src.cbe276fd.css.map */
+/*# sourceMappingURL=src.e9aba045.css.map */

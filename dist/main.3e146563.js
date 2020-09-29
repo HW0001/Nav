@@ -118,15 +118,53 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"epB2":[function(require,module,exports) {
+var items = window.localStorage.getItem("navSite");
+console.log(items);
+
+if (!items) {
+  var _items = [{
+    log: "A",
+    logType: 'text',
+    url: "https://www.acfun.cn/",
+    alias: "acfun"
+  }, {
+    log: "B",
+    logType: 'text',
+    url: "https://www.bilibili.com/",
+    alias: "bilibili"
+  }];
+  window.localStorage.setItem("navSite", JSON.stringify(_items));
+} else {
+  items = JSON.parse(items);
+}
+
+buildCard();
+
+function buildCard() {
+  $("ol>li:not(#last)").remove();
+  items.forEach(function (node) {
+    $("\n    <li>\n    <a href=\"".concat(node.url, "\"><div>\n    <div>").concat(node.log[0], "</div>\n    <span>").concat(node.alias, "</span>\n    </div></a></li>\n")).insertBefore($("#last"));
+  });
+}
+
 $("#addsite").on("click", function () {
   var url = prompt("请输入添加网址");
   if (!url) return;
 
-  if (url.indexOf('http://') !== -1) {
-    url += 'http://';
+  if (url.indexOf('http://') === -1) {
+    url = 'http://' + url;
   }
 
-  $(" <li>\n   <a href=\"".concat(url, "\"><div>\n   <div>").concat(url[0], "</div>\n   <span>").concat(url, "</span>\n</div></a></li>")).insertBefore($("#addsite").parent().parent());
+  var b = url.match(/http:\/\/w*\.*(\w*)/);
+  var obj = {
+    log: b[1][0],
+    logType: 'text',
+    url: "https://www.acfun.cn/",
+    alias: b[1]
+  };
+  items.push(obj);
+  window.localStorage.setItem("navSite", JSON.stringify(items));
+  buildCard();
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.ad99593d.js.map
+//# sourceMappingURL=main.3e146563.js.map
